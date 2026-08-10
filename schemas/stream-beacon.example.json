@@ -1,0 +1,26 @@
+{
+  "currentBlock": "HAI Rap Block",
+  "trackInfo": {
+    "title": "Concrete Dreams",
+    "artist": "Nova Verse"
+  },
+  "npcMood": {
+    "icon": "😏",
+    "label": "Sarcastic but Manageable"
+  },
+  "recentChatHighlight": {
+    "platform": "twitch",
+    "handle": "BeatSeeker23",
+    "message": "This beat is nasty in the best way."
+  },
+  "activeVenue": "8-Bit Underground",
+  "signalStrength": "strong",
+  "playlistPulse": {
+    "status": "winning_playlist_available",
+    "modalEnabled": true
+  },
+  "highFrequencyGateway": {
+    "status": "new_episode_available",
+    "isSeparateProperty": true
+  }
+}
