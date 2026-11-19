@@ -1,45 +1,58 @@
 # HAI RADIO
+### HomelandAI's intelligent, meticulously curated radio and venue signal platform
 
-**HAI RADIO** is the HomelandAI web-based mainframe system for a premium internet radio experience powered by Radio.co, enhanced by a custom HAI front-end, NPC host intelligence, live venue signaling, Twitch/Maestro interaction, Playlist Pulse gateway integration, and a separate pathway to **The HAI Frequency** weekly podcast property.
+**Project status: architecture + UI scaffold; not production, not licensed or connected to live Radio.co yet.**
 
-HAI RADIO is not just a music station. It is the voice, rhythm, commentary layer, game gateway, and central nervous system of the HomelandAI audio and venue universe.
+[Implementation plan](docs/IMPLEMENTATION-PLAN.md) · [Backlog](docs/IMPLEMENTATION-BACKLOG.md) · [System architecture](docs/IMPLEMENTATION-ARCHITECTURE.md) · [Rights and security](docs/SECURITY-RIGHTS.md) · [NPC operations](docs/NPC-OPERATIONS.md) · [UX QA](docs/DESIGN-QA.md) · [Launch operations](docs/LAUNCH-OPERATIONS.md) · [Decisions & risks](docs/DECISIONS-AND-RISKS.md)
 
-## Core pillars
+## Mission
+HAI RADIO is a HomelandAI custom web/PWA experience centered on a **Radio.co-powered station** (pending provider setup and rights). It unites genre-educated NPC hosts, a dynamically contextual **HAI Stream Beacon**, strict curatorial judgement, entertaining listener submissions, a **Venue Signal Map**, and a listener-first interface. Rear-POV retro-futuristic DJ studio visuals connect the music to its hosts. The first station prioritizes discovering and enjoying HomelandAI's unusually wide but meticulously selected music repertoire.
 
-- **Radio.co broadcast engine** for live stream delivery, station scheduling, and radio metadata.
-- **Custom HAI interface** with retro-futuristic command center visuals.
-- **HAI Stream Beacon** as a persistent global status bar across the system.
-- **Music blocks** for Afterdark, Amapiano, Rap Block, House Set, RNB Rewind, Afrobeats Blaze, Cafe/LoFi, and Sunday Service.
-- **NPC Host Universe** with genre-trained personalities and venue-specific commentary.
-- **Submission Court** with approval, denial, voting, roasts, sound cues, and clip-worthy moments.
-- **Playlist Pulse Gateway** with a glowing Pulse button and winning playlist modal.
-- **Venue Signal Map** showing HAI Radio across 8-Bit Underground, HAI Cafe, Rooftop, Gym, XR Theater, HAI Studio, North Coast RD Live, and Taste of Paradise gateways.
-- **High Frequency Gateway** as a connected but separate weekly podcast pathway.
-- **Supabase data layer** for submissions, votes, NPC profiles, clips, venue states, playlist pulse rounds, and realtime UI state.
+**Separate products, connected gateways:** The **PULSE** node opens the *numerically ordered official winning playlist* from the separate Playlist Pulse game. The **HAI Frequency** button links to an independent weekly podcast, NOT a HAI Radio block or feature segment.
 
-## Quick start
+## Current repository
+- `app/` and `components/`: concept Next.js UI scaffold and mock sample data.
+- `data/`: sample blocks, NPCs, venues and court.
+- `lib/radioCo.ts`: **placeholder** metadata; do not present as a live service.
+- `supabase/schema.sql`: prototype schema, **not production safe until RLS and authorization are designed/tested**.
+- `docs/`: product requirements and implementation package with phases 0–10, critical-path tasks and formal release gates.
+- `.github/`: issue/PR templates. Work tracking should use GitHub Issues.
+- `schemas/`: event payload samples.
 
+## Planned phased delivery
+| Phase | Goal |
+|---|---|
+| 0 | Discovery, API verification and music rights sign-off |
+| 1 | Responsive branded UX and design system |
+| 2 | Secure engineering foundation, RLS, CI and environments |
+| 3 | Radio.co streaming, metadata and scheduled curation |
+| 4 | Listener MVP and Pulse/Frequency distinct gateways |
+| 5 | Submissions, court, editorial moderation |
+| 6 | Genre specialist NPC intelligence and broadcast clock |
+| 7 | Moderated chat batching, voting and OBS overlays |
+| 8 | One venue pilot, Twitch/Maestro integration subject to rights |
+| 9 | Beta hardening, release approval, public launch |
+| 10 | Analytics, tuning, and future second station assessment |
+
+See [plan](docs/IMPLEMENTATION-PLAN.md) for deliverables, dependencies, exit criteria, engineering checks, ownership and release milestones.
+
+## Start local UI scaffold
 ```bash
 npm install
 cp .env.example .env.local
 npm run dev
 ```
+This does **not** create a live station, configure Supabase, or authorize broadcasting. Treat mock counters, songs, venues and NPC reactions as demo fixtures until connected and independently validated.
 
-Open http://localhost:3000.
+## Architecture boundaries
+**Radio.co:** broadcast/scheduling and station metadata, pending validated API/plan.  
+**Supabase:** HAI app data, Auth, Edge Functions, Realtime and Storage; all exposed tables need tested RLS.  
+**Next.js:** custom browser/PWA and OBS UI, safe API adapters.  
+**Twitch/Maestro:** optional audience surfaces only when platform integration and music distribution rights are cleared.  
+**NPC:** evidence-backed dialogue, human supervision, original rights-cleared audio and scheduled speaking windows.  
+**Venue:** signal observations only from authorized data, no private screen surveillance.
 
-## Repository map
+## Required launch gates
+Music licensing by output surface and territory, honest real-time provider data, secure role separation, curator-controlled tracks, privacy/consent, accessible player, moderation and incident controls, and tested deployments. **No feature is production-ready because it appears in the mock UI.**
 
-```text
-app/                    Next.js app shell and main page
-components/             UI components for the HAI Radio mainframe
-data/                   Mock project data for blocks, NPCs, venues, and submissions
-lib/                    Radio.co and Supabase client helpers
-supabase/schema.sql     Database schema for the HAI Radio backend
-schemas/                JSON schema examples for integrations
-docs/                   Project bible, architecture, strategy, and conversation summary
-public/                 Asset placeholder notes
-```
-
-## Product status
-
-This repository is a comprehensive concept-to-build scaffold. It contains the documentation, UI skeleton, data models, Supabase schema, and integration contracts needed to move HAI RADIO into design, prototype, and implementation.
+**HAI RADIO — You're not just hearing HAI. You're living in it.**
