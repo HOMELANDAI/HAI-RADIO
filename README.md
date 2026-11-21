@@ -56,3 +56,9 @@ This does **not** create a live station, configure Supabase, or authorize broadc
 Music licensing by output surface and territory, honest real-time provider data, secure role separation, curator-controlled tracks, privacy/consent, accessible player, moderation and incident controls, and tested deployments. **No feature is production-ready because it appears in the mock UI.**
 
 **HAI RADIO — You're not just hearing HAI. You're living in it.**
+
+## GitHub-managed development program
+
+**[Open master execution issue #34](https://github.com/HOMELANDAI/HAI-RADIO/issues/34)** · **[Phase epics #23–#33](https://github.com/HOMELANDAI/HAI-RADIO/issues?q=is%3Aissue+is%3Aopen+%5BEPIC)** · **[Project board specification](docs/PROJECT-BOARD.md)**
+
+The 11 phases are now mirrored as live GitHub epic issues with linked work packages, acceptance criteria and dependencies. This is a fully issue-tracked *repository project*. A separate native GitHub Projects v2 board remains uncreated, because the connected GitHub tools do not provide board creation; board layout and setup instructions are documented in `docs/PROJECT-BOARD.md`.
